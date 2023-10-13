@@ -14,7 +14,9 @@
     background-color: #fb6f92;
     color: #ffffff;
     font-family: sans-serif;
-    /* width: 90%; */
+    width: 90%;
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
 }
 .todo-icon{
     width: 20%;
