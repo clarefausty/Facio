@@ -28,5 +28,6 @@
             "sizes": "32x32",
             "type": "image/png"
         }
-    ]
+    ],
+    "prefer_related_applications" : true
 }
