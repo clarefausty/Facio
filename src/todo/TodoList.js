@@ -96,6 +96,19 @@ const TodoList = () => {
     ],
   };
 
+  const chartOptions = {
+    plugins: {
+      legend: {
+        display: true,
+        labels: {
+          font: {
+            size: 16, 
+          },
+          
+        },
+      },
+    },
+  };
   return (
     <div className='facio-container'>
       <h1>Facio</h1>
@@ -139,14 +152,19 @@ const TodoList = () => {
 
           </ul>
           </div>
+
+          <div className='track-section'>
+<h3>Task Completed</h3>
+<div className='chart-con'>
+<Pie data={chartData} options={chartOptions}  />
+</div>
+</div>
+
         </div>
       ))}
 
 {/* Track Section */}
-<div className='track-section'>
-<h3>Task Completed</h3>
-<Pie data={chartData} />
-</div>
+
 
       <div className='input-container'>
         <div className='input-area' >
