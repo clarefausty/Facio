@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./todolist.css"
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -75,8 +76,8 @@ const TodoList = () => {
   }, {});
 
   return (
-    <div>
-      <h1>Todo List</h1>
+    <div className='facio-container'>
+      <h1>Facio</h1>
       
       {Object.entries(groupedTodos).map(([date, dateTodos]) => (
         <div key={date}>
