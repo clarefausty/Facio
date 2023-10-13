@@ -86,6 +86,7 @@ const TodoList = () => {
           <ul>
             {dateTodos.map((todo, index) => (
               <li key={index} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+                <div className='todocontent'>
                 <input type="checkbox" checked={todo.completed} onChange={() => toggleCompleted(index)} />
                 {todo.editing ? (
                   <>
@@ -97,17 +98,18 @@ const TodoList = () => {
                     <button onClick={() => handleEdit(index, todo.text)}>Done</button>
                   </>
                 ) : (
-                  <div className='todocontent'>
+                    <>
                     <span className='texttodo'>{todo.text}</span>
                     <span>{todo.time}</span>
                     <div className='erbtn'>
                     <button onClick={() => toggleEdit(index)}>Edit</button>
                     <button onClick={() => removeTodo(index)}>Remove</button>
                     </div>
-                  </div>
+                    </>
+                  
                   
                 )}
-                    
+                </div>    
               </li>
             ))}
 
