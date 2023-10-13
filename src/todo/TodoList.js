@@ -82,6 +82,7 @@ const TodoList = () => {
       {Object.entries(groupedTodos).map(([date, dateTodos]) => (
         <div className='todoUpdate-container' key={date}>
           <h3>{date === 'No Date' ? 'No Date' : new Date(date).toDateString()}</h3>
+          <div className='todo-div'>
           <ul>
             {dateTodos.map((todo, index) => (
               <li key={index} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
@@ -96,16 +97,22 @@ const TodoList = () => {
                     <button onClick={() => handleEdit(index, todo.text)}>Done</button>
                   </>
                 ) : (
-                  <>
-                    <span>{todo.text}</span>
+                  <div className='todocontent'>
+                    <span className='texttodo'>{todo.text}</span>
                     <span>{todo.time}</span>
+                    <div className='erbtn'>
                     <button onClick={() => toggleEdit(index)}>Edit</button>
-                  </>
+                    <button onClick={() => removeTodo(index)}>Remove</button>
+                    </div>
+                  </div>
+                  
                 )}
-                <button onClick={() => removeTodo(index)}>Remove</button>
+                    
               </li>
             ))}
+
           </ul>
+          </div>
         </div>
       ))}
       <div className='input-container'>

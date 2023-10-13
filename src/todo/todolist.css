@@ -4,20 +4,43 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 .todoUpdate-container{
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2rem;
 }
+.todo-div{
+    /* width: 90%; */
+    margin-bottom: 2em;
+    border-radius: .5rem;
+    margin: 0 auto 2em auto;
+    border: 2px solid #eee;
+}
+/* .texttodo{
+    max-width: 200px;
+} */
 ul{
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
+    border-bottom: 1px solid #eee;
+    
+
+   
 }
 ul li{
     text-decoration: none;
     list-style: none;
     display: flex;
     gap: 2rem;
+    border-bottom: 1px solid #eee;
+    padding: 2em;    
+   
+}
+.todocontent{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 .facio-container{
     /* margin: 0 auto; */
@@ -34,6 +57,7 @@ ul li{
     border: 2px solid #555;
     padding: 2em;
     border-radius: .5rem;
+    width: 90%;
 }
 
 .input-area{
