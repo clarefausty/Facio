@@ -80,7 +80,7 @@ const TodoList = () => {
       <h1>Facio</h1>
       
       {Object.entries(groupedTodos).map(([date, dateTodos]) => (
-        <div key={date}>
+        <div className='todoUpdate-container' key={date}>
           <h3>{date === 'No Date' ? 'No Date' : new Date(date).toDateString()}</h3>
           <ul>
             {dateTodos.map((todo, index) => (
@@ -88,7 +88,7 @@ const TodoList = () => {
                 <input type="checkbox" checked={todo.completed} onChange={() => toggleCompleted(index)} />
                 {todo.editing ? (
                   <>
-                    <input
+                    <textarea
                       type="text"
                       value={todo.text}
                       onChange={(e) => handleEdit(index, e.target.value)}
