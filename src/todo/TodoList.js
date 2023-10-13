@@ -108,7 +108,7 @@ const TodoList = () => {
             {dateTodos.map((todo, index) => (
               <li key={index} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
                 <div className='todocontent'>
-                <input type="checkbox" checked={todo.completed} onChange={() => toggleCompleted(index)} />
+                <input type="radio" checked={todo.completed} onChange={() => toggleCompleted(index)} />
                 {todo.editing ? (
                   <>
                     <textarea
@@ -120,19 +120,20 @@ const TodoList = () => {
                   </>
                 ) : (
                     <div className='todocontent'>
-                    <div>
+                    <div className='textTime'>
                     <span className='texttodo'>{todo.text}</span>
                     <span>{todo.time}</span>
                     </div>
-                    <div className='erbtn'>
-                    <button onClick={() => toggleEdit(index)}>Edit</button>
-                    <button onClick={() => removeTodo(index)}>Remove</button>
-                    </div>
+                    
                     </div>
                   
                   
                 )}
-                </div>    
+                </div> 
+                <div className='erbtn'>
+                    <button onClick={() => toggleEdit(index)}>Edit</button>
+                    <button onClick={() => removeTodo(index)}>Remove</button>
+                    </div>   
               </li>
             ))}
 
