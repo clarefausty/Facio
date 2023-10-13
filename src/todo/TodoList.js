@@ -172,8 +172,9 @@ const TodoList = () => {
         <input type="date" value={newDate} onChange={handleDateChange} />
         <input type="time" value={newTime} onChange={handleTimeChange} />
         </div>
-        <button className='addbtn' onClick={addTodo}>Add</button>
+        
       </div>
+      <button className='addbtn' onClick={addTodo}>Add</button>
     </div>
   );
 };
