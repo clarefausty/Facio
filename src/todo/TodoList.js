@@ -112,7 +112,10 @@ const TodoList = () => {
   return (
     <div className='facio-container'>
       <div className='icon-con'>
+        <div>
       <h1>Facio</h1>
+      <p>Track your daily performance</p>
+      </div>
       <img className='todo-icon' src='/assets/facioImg.png' alt='to do icon'/>
       </div>
       
