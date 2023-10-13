@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import "./todolist.css"
+import "./todolist.css";
+import { Pie } from 'react-chartjs-2';
+import 'chart.js/auto';
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
@@ -75,6 +77,25 @@ const TodoList = () => {
     return acc;
   }, {});
 
+
+  const calculateCompletionPercentage = () => {
+    const completedCount = todos.filter(todo => todo.completed).length;
+    const totalCount = todos.length;
+    return totalCount === 0 ? 0 : (completedCount / totalCount) * 100;
+  };
+
+  // Chart data
+  const chartData = {
+    labels: ['Completed', 'Remaining'],
+    datasets: [
+      {
+        data: [calculateCompletionPercentage(), 100 - calculateCompletionPercentage()],
+        backgroundColor: ['#36A2EB', '#FF6384'],
+        hoverBackgroundColor: ['#36A2EB', '#FF6384'],
+      },
+    ],
+  };
+
   return (
     <div className='facio-container'>
       <h1>Facio</h1>
@@ -119,6 +140,13 @@ const TodoList = () => {
           </div>
         </div>
       ))}
+
+{/* Track Section */}
+<div className='track-section'>
+<h3>Task Completed</h3>
+<Pie data={chartData} />
+</div>
+
       <div className='input-container'>
         <div className='input-area' >
         <input rows={7} type="text" placeholder="Enter activity" value={newTodo} onChange={handleInputChange} />
