@@ -98,14 +98,16 @@ const TodoList = () => {
                     <button onClick={() => handleEdit(index, todo.text)}>Done</button>
                   </>
                 ) : (
-                    <>
+                    <div className='todocontent'>
+                    <div>
                     <span className='texttodo'>{todo.text}</span>
                     <span>{todo.time}</span>
+                    </div>
                     <div className='erbtn'>
                     <button onClick={() => toggleEdit(index)}>Edit</button>
                     <button onClick={() => removeTodo(index)}>Remove</button>
                     </div>
-                    </>
+                    </div>
                   
                   
                 )}
@@ -119,11 +121,11 @@ const TodoList = () => {
       ))}
       <div className='input-container'>
         <div className='input-area' >
-        <textarea rows={7} type="text" placeholder="Enter activity" value={newTodo} onChange={handleInputChange} />
+        <input rows={7} type="text" placeholder="Enter activity" value={newTodo} onChange={handleInputChange} />
         <input type="date" value={newDate} onChange={handleDateChange} />
         <input type="time" value={newTime} onChange={handleTimeChange} />
         </div>
-        <button onClick={addTodo}>Add</button>
+        <button className='addbtn' onClick={addTodo}>Add</button>
       </div>
     </div>
   );
