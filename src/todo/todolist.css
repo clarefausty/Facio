@@ -83,6 +83,7 @@ ul li{
 
 .input-container{
     display: flex;
+    justify-content: center;
     gap: 1.2rem;
     border: 2px solid #555;
     padding: 2em .9em;
