@@ -173,13 +173,11 @@ const TodoList = () => {
 
 
       <div className='input-container'>
-        <div className='input-area' >
         <input className='input-text' type="text" placeholder="Enter activity" value={newTodo} onChange={handleInputChange} />
         <input type="date" value={newDate} onChange={handleDateChange} />
         <input type="time" value={newTime} onChange={handleTimeChange} />
         </div>
-        
-      </div>
+    
       <button className='addbtn' onClick={addTodo}>Add</button>
     </div>
   );
