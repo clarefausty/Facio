@@ -77,12 +77,7 @@ const TodoList = () => {
   return (
     <div>
       <h1>Todo List</h1>
-      <div>
-        <input type="text" placeholder="Enter activity" value={newTodo} onChange={handleInputChange} />
-        <input type="date" value={newDate} onChange={handleDateChange} />
-        <input type="time" value={newTime} onChange={handleTimeChange} />
-        <button onClick={addTodo}>Add</button>
-      </div>
+      
       {Object.entries(groupedTodos).map(([date, dateTodos]) => (
         <div key={date}>
           <h3>{date === 'No Date' ? 'No Date' : new Date(date).toDateString()}</h3>
@@ -112,6 +107,12 @@ const TodoList = () => {
           </ul>
         </div>
       ))}
+      <div>
+        <input type="text" placeholder="Enter activity" value={newTodo} onChange={handleInputChange} />
+        <input type="date" value={newDate} onChange={handleDateChange} />
+        <input type="time" value={newTime} onChange={handleTimeChange} />
+        <button onClick={addTodo}>Add</button>
+      </div>
     </div>
   );
 };
