@@ -111,7 +111,10 @@ const TodoList = () => {
   };
   return (
     <div className='facio-container'>
+      <div className='icon-con'>
       <h1>Facio</h1>
+      <img className='todo-icon' src='/assets/facioImg.png' alt='to do icon'/>
+      </div>
       
       {Object.entries(groupedTodos).map(([date, dateTodos]) => (
         <div className='todoUpdate-container' key={date}>
