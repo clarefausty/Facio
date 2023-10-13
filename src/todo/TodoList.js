@@ -108,10 +108,12 @@ const TodoList = () => {
           </ul>
         </div>
       ))}
-      <div>
-        <input type="text" placeholder="Enter activity" value={newTodo} onChange={handleInputChange} />
+      <div className='input-container'>
+        <div className='input-area' >
+        <textarea rows={7} type="text" placeholder="Enter activity" value={newTodo} onChange={handleInputChange} />
         <input type="date" value={newDate} onChange={handleDateChange} />
         <input type="time" value={newTime} onChange={handleTimeChange} />
+        </div>
         <button onClick={addTodo}>Add</button>
       </div>
     </div>
